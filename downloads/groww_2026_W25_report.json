@@ -1,0 +1,238 @@
+{
+  "product": "groww",
+  "display_name": "Groww",
+  "iso_year": 2026,
+  "iso_week": 25,
+  "generated_at": "2026-06-17T16:09:45.965807Z",
+  "review_window_start": "2026-04-12T00:00:00Z",
+  "review_window_end": "2026-06-21T00:00:00Z",
+  "themes": [
+    {
+      "name": "High Brokerage Charges",
+      "description": "Users are complaining about the high brokerage charges and fees associated with using the Groww app, which is affecting their investment experience. Many users have mentioned that the charges are too high and are eating into their profits.",
+      "quotes": [
+        {
+          "text": "brokerage charges high , but app's ui and features are awesome",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T20:31:35Z",
+          "validated": true
+        },
+        {
+          "text": "compared to other apps to much expensive brokerage charged.. be alert and note. even we take one lot also taken high brokerage charges..be safe all. if you earn 1000 grow app share 400. finally you traded for grow app not for you",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T20:31:35Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Review and optimize the broker...",
+          "details": "Review and optimize the brokerage charge structure to make it more competitive and user-friendly",
+          "related_theme": "High Brokerage Charges"
+        },
+        {
+          "title": "Consider introducing a tiered ...",
+          "details": "Consider introducing a tiered pricing system or discounts for frequent traders to reduce the burden of high brokerage charges",
+          "related_theme": "High Brokerage Charges"
+        }
+      ],
+      "review_count": 91,
+      "cluster_label": 16
+    },
+    {
+      "name": "Overall Satisfaction",
+      "description": "The majority of users are satisfied with the product, giving it high ratings and positive comments. However, a few users have expressed negative opinions, indicating room for improvement.",
+      "quotes": [
+        {
+          "text": "good",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T18:34:13Z",
+          "validated": true
+        },
+        {
+          "text": "v good",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T18:34:13Z",
+          "validated": true
+        },
+        {
+          "text": "pathetic",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T18:34:13Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Analyze the factors contributi...",
+          "details": "Analyze the factors contributing to high user satisfaction to identify areas of strength and opportunities for further improvement",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Investigate the causes of nega...",
+          "details": "Investigate the causes of negative reviews to address and resolve the underlying issues",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 84,
+      "cluster_label": 0
+    },
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are generally satisfied with the product, giving it high ratings and positive feedback. The reviews are brief and lack specific details, but the overall sentiment is positive.",
+      "quotes": [
+        {
+          "text": "good 👍",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T17:27:54Z",
+          "validated": true
+        },
+        {
+          "text": "excellent 👍👍👍👌",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T17:27:54Z",
+          "validated": true
+        },
+        {
+          "text": "nothing to say 😉",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T17:27:54Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Gather more detailed feedback ...",
+          "details": "Gather more detailed feedback to identify areas for improvement",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Leverage the positive sentimen...",
+          "details": "Leverage the positive sentiment in marketing campaigns to attract new users",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 28,
+      "cluster_label": 6
+    },
+    {
+      "name": "Positive Experience",
+      "description": "The majority of users have had a positive experience, with many using the word 'nice' to describe it. Most reviews are 5-star, indicating a high level of satisfaction.",
+      "quotes": [
+        {
+          "text": "awesome",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T19:31:43Z",
+          "validated": true
+        },
+        {
+          "text": "nice",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T19:31:43Z",
+          "validated": true
+        },
+        {
+          "text": "wow nice",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T19:31:43Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Maintain current quality stand...",
+          "details": "Maintain current quality standards",
+          "related_theme": "Positive Experience"
+        },
+        {
+          "title": "Gather more detailed feedback ...",
+          "details": "Gather more detailed feedback to identify areas for improvement",
+          "related_theme": "Positive Experience"
+        }
+      ],
+      "review_count": 24,
+      "cluster_label": 2
+    },
+    {
+      "name": "Generally Positive Experience",
+      "description": "The majority of users have reported a positive experience, with many using words like 'super' and 'superb' to describe the service. However, there are some negative reviews and comments about speed.",
+      "quotes": [
+        {
+          "text": "superb service",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T15:21:30Z",
+          "validated": true
+        },
+        {
+          "text": "slow speed",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T15:21:30Z",
+          "validated": true
+        },
+        {
+          "text": "suckers",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T15:21:30Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Improve the speed of the servi...",
+          "details": "Improve the speed of the service to address the concerns of users who have reported slow speeds",
+          "related_theme": "Generally Positive Experience"
+        },
+        {
+          "title": "Investigate the cause of negat...",
+          "details": "Investigate the cause of negative reviews to identify areas for improvement and prevent similar issues in the future",
+          "related_theme": "Generally Positive Experience"
+        }
+      ],
+      "review_count": 20,
+      "cluster_label": 3
+    }
+  ],
+  "stats": {
+    "total_reviews": 489,
+    "appstore_reviews": 0,
+    "playstore_reviews": 489,
+    "clusters_found": 5,
+    "noise_reviews": 0,
+    "themes_generated": 5,
+    "quotes_proposed": 15,
+    "quotes_validated": 14,
+    "llm_usage": {
+      "input_tokens": 5397,
+      "output_tokens": 655,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}

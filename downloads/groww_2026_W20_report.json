@@ -1,0 +1,25 @@
+{
+  "product": "groww",
+  "display_name": "Groww",
+  "iso_year": 2026,
+  "iso_week": 20,
+  "generated_at": "2026-06-17T11:22:07.282902Z",
+  "review_window_start": "2026-03-08T00:00:00Z",
+  "review_window_end": "2026-05-17T00:00:00Z",
+  "themes": [],
+  "stats": {
+    "total_reviews": 0,
+    "appstore_reviews": 0,
+    "playstore_reviews": 0,
+    "clusters_found": 0,
+    "noise_reviews": 0,
+    "themes_generated": 0,
+    "quotes_proposed": 0,
+    "quotes_validated": 0,
+    "llm_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}

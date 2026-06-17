@@ -1,0 +1,37 @@
+# ============================================================
+# Pulse — Default Configuration
+# ============================================================
+# Base configuration for the App Review Pulse pipeline.
+# Override with environment-specific YAML or PULSE_* env vars.
+# ============================================================
+
+# --- Ingestion ---
+review_window_weeks: 10          # Rolling window: 8–12 weeks
+max_reviews_per_product: 500     # Cap on reviews ingested per product
+
+# --- Analysis ---
+min_cluster_size: 5              # Minimum reviews for HDBSCAN cluster
+max_themes: 5                    # Maximum themes in the report
+quotes_per_theme: 3              # Maximum quotes per theme
+actions_per_theme: 2             # Maximum action ideas per theme
+
+# --- LLM & Embeddings ---
+llm_model: "gpt-4o"
+embedding_model: "text-embedding-3-small"
+max_tokens_per_run: 60000        # Hard token budget per pipeline run
+
+# --- Delivery ---
+email_mode: "none"              # "none", "draft" (staging) or "send" (production)
+
+# --- Cost Controls ---
+cost_alert_threshold_usd: 2.00   # Warn if single-run cost exceeds this
+
+# --- Retry ---
+retry_max_attempts: 3
+retry_backoff_base_sec: 2
+
+# --- State ---
+run_ledger_path: "./data/run_ledger.json"
+
+# --- Logging ---
+log_level: "INFO"

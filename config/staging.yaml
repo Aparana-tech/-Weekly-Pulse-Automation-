@@ -1,0 +1,9 @@
+app_id: "com.pulse.agent"
+log_level: "INFO"
+llm_model: "gpt-4o"
+embedding_model: "all-MiniLM-L6-v2"
+review_window_weeks: 10
+email_mode: "draft"
+api_timeout_seconds: 60
+max_retries: 5
+max_reviews_to_process: 200

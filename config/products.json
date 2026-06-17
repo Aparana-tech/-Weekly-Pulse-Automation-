@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "slug": "indmoney",
+      "display_name": "INDMoney",
+      "appstore_id": "1470055815",
+      "playstore_id": "com.indmoney.app",
+      "doc_id": "",
+      "doc_title": "Weekly Review Pulse — INDMoney",
+      "stakeholder_emails": []
+    },
+    {
+      "slug": "groww",
+      "display_name": "Groww",
+      "appstore_id": "1404871703",
+      "playstore_id": "com.nextbillion.groww",
+      "doc_id": "1Ts1cAuaOFqOZkdYEPCM1tahG4xyt2_i-OvRojEjXg2M",
+      "doc_title": "Weekly Review Pulse — Groww",
+      "stakeholder_emails": ["aparana418@gmail.com", "raghuvanshiaparana@gmail.com"]
+    },
+    {
+      "slug": "powerup-money",
+      "display_name": "PowerUp Money",
+      "appstore_id": "",
+      "playstore_id": "",
+      "doc_id": "",
+      "doc_title": "Weekly Review Pulse — PowerUp Money",
+      "stakeholder_emails": []
+    },
+    {
+      "slug": "wealth-monitor",
+      "display_name": "Wealth Monitor",
+      "appstore_id": "",
+      "playstore_id": "",
+      "doc_id": "",
+      "doc_title": "Weekly Review Pulse — Wealth Monitor",
+      "stakeholder_emails": []
+    },
+    {
+      "slug": "kuvera",
+      "display_name": "Kuvera",
+      "appstore_id": "1341059498",
+      "playstore_id": "com.goalgetter.kuvera",
+      "doc_id": "",
+      "doc_title": "Weekly Review Pulse — Kuvera",
+      "stakeholder_emails": []
+    }
+  ]
+}

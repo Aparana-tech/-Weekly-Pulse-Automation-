@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "google-docs": {
+      "command": "python3",
+      "args": ["src/delivery/real_docs_mcp_server.py"],
+      "env": {}
+    },
+    "gmail": {
+      "command": "python3",
+      "args": ["src/delivery/mock_mcp_server.py"],
+      "env": {}
+    }
+  }
+}
