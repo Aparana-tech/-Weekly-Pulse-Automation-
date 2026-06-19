@@ -7,7 +7,9 @@
     },
     "gmail": {
       "command": "python3",
-      "args": ["src/delivery/mock_mcp_server.py"],
+      "args": [
+        "src/delivery/real_gmail_mcp_server.py"
+      ],
       "env": {}
     }
   }

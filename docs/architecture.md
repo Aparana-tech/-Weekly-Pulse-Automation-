@@ -1039,15 +1039,17 @@ graph TD
 
 | Method | Tool | Configuration |
 |--------|------|---------------|
-| **Cron (Primary)** | System crontab or cloud scheduler | `0 6 * * 1` (Monday 6:00 AM IST) |
+| **Python Daemon (Primary)** | Native `scripts/scheduler.py` via `schedule` | Default: Every Monday at 6:00 AM |
+| **Cron (Alternative)** | System crontab via `scripts/setup_cron.sh` | `0 6 * * 1` (Monday 6:00 AM) |
 | **Cloud Scheduler** | GCP Cloud Scheduler / AWS EventBridge | HTTP trigger to agent endpoint or CLI invocation |
-| **Manual** | CLI | `pulse run --product groww` |
+| **Manual** | CLI | `python3 src/main.py run --all` |
 
-**Crontab Example**:
+**Automated Python Scheduler Example**:
 
-```cron
-# Run pulse for all products every Monday at 6:00 AM IST
-0 6 * * 1 cd /app && pulse run --all >> /var/log/pulse/cron.log 2>&1
+```bash
+# Start the background daemon
+source .venv/bin/activate
+python3 scripts/scheduler.py
 ```
 
 ---

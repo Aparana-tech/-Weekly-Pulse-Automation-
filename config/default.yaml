@@ -21,7 +21,7 @@ embedding_model: "text-embedding-3-small"
 max_tokens_per_run: 60000        # Hard token budget per pipeline run
 
 # --- Delivery ---
-email_mode: "none"              # "none", "draft" (staging) or "send" (production)
+email_mode: "draft"              # "none", "draft" (staging) or "send" (production)
 
 # --- Cost Controls ---
 cost_alert_threshold_usd: 2.00   # Warn if single-run cost exceeds this

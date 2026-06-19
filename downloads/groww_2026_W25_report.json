@@ -3,14 +3,22 @@
   "display_name": "Groww",
   "iso_year": 2026,
   "iso_week": 25,
-  "generated_at": "2026-06-17T16:09:45.965807Z",
+  "generated_at": "2026-06-17T16:52:53.381348Z",
   "review_window_start": "2026-04-12T00:00:00Z",
   "review_window_end": "2026-06-21T00:00:00Z",
   "themes": [
     {
       "name": "High Brokerage Charges",
-      "description": "Users are complaining about the high brokerage charges and fees associated with using the Groww app, which is affecting their investment experience. Many users have mentioned that the charges are too high and are eating into their profits.",
+      "description": "Users are expressing dissatisfaction with the high brokerage charges imposed by the app, which is affecting their trading experience and overall profitability. Many users have compared the charges to other platforms and found them to be higher.",
       "quotes": [
+        {
+          "text": "brokerage charge is more higher than some other apps",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T20:31:35Z",
+          "validated": true
+        },
         {
           "text": "brokerage charges high , but app's ui and features are awesome",
           "review_id": "unknown",
@@ -20,7 +28,7 @@
           "validated": true
         },
         {
-          "text": "compared to other apps to much expensive brokerage charged.. be alert and note. even we take one lot also taken high brokerage charges..be safe all. if you earn 1000 grow app share 400. finally you traded for grow app not for you",
+          "text": "broker charge very big",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
@@ -30,8 +38,8 @@
       ],
       "actions": [
         {
-          "title": "Review and optimize the broker...",
-          "details": "Review and optimize the brokerage charge structure to make it more competitive and user-friendly",
+          "title": "Review and adjust the brokerag...",
+          "details": "Review and adjust the brokerage charge structure to be more competitive with other platforms",
           "related_theme": "High Brokerage Charges"
         },
         {
@@ -40,12 +48,12 @@
           "related_theme": "High Brokerage Charges"
         }
       ],
-      "review_count": 91,
-      "cluster_label": 16
+      "review_count": 94,
+      "cluster_label": 9
     },
     {
-      "name": "Overall Satisfaction",
-      "description": "The majority of users are satisfied with the product, giving it high ratings and positive comments. However, a few users have expressed negative opinions, indicating room for improvement.",
+      "name": "Overwhelmingly Positive",
+      "description": "The majority of users have given positive reviews, with most of them simply stating that the product or service is 'good'. This suggests a high level of customer satisfaction. However, there is a lack of detailed feedback, which could be useful for identifying areas for improvement.",
       "quotes": [
         {
           "text": "good",
@@ -74,66 +82,66 @@
       ],
       "actions": [
         {
-          "title": "Analyze the factors contributi...",
-          "details": "Analyze the factors contributing to high user satisfaction to identify areas of strength and opportunities for further improvement",
-          "related_theme": "Overall Satisfaction"
+          "title": "Gather more detailed feedback ...",
+          "details": "Gather more detailed feedback from customers to identify areas for improvement",
+          "related_theme": "Overwhelmingly Positive"
         },
         {
-          "title": "Investigate the causes of nega...",
-          "details": "Investigate the causes of negative reviews to address and resolve the underlying issues",
-          "related_theme": "Overall Satisfaction"
+          "title": "Analyze the small number of ne...",
+          "details": "Analyze the small number of negative reviews to understand the causes of dissatisfaction and address them",
+          "related_theme": "Overwhelmingly Positive"
         }
       ],
       "review_count": 84,
       "cluster_label": 0
     },
     {
-      "name": "Overall Satisfaction",
-      "description": "Users are generally satisfied with the product, giving it high ratings and positive feedback. The reviews are brief and lack specific details, but the overall sentiment is positive.",
+      "name": "Unreliable Service",
+      "description": "Users are experiencing issues with the app's reliability, including problems with withdrawals, technical issues, and unresponsive customer support. Many users have reported losing money due to these issues.",
       "quotes": [
         {
-          "text": "good 👍",
+          "text": "Bhai groww app mera paisa kha rh h, pehle apne App p balance mangta h then investment krta h stocks me.",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T17:27:54Z",
+          "date": "2026-06-16T14:52:29Z",
           "validated": true
         },
         {
-          "text": "excellent 👍👍👍👌",
+          "text": "brokerage charge ka samjh nhi aata hai kabhi 14 rupees to kabhi 20 aur kabhi 35 kat leta hai",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T17:27:54Z",
+          "date": "2026-06-16T14:52:29Z",
           "validated": true
         },
         {
-          "text": "nothing to say 😉",
+          "text": "no support system for customer... very bad service... jb dekho bs ticket raise krte rhehte h... tickets kabhi resolve nhi hotti",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T17:27:54Z",
+          "date": "2026-06-16T14:52:29Z",
           "validated": true
         }
       ],
       "actions": [
         {
-          "title": "Gather more detailed feedback ...",
-          "details": "Gather more detailed feedback to identify areas for improvement",
-          "related_theme": "Overall Satisfaction"
+          "title": "Implement a more transparent a...",
+          "details": "Implement a more transparent and consistent brokerage charge system to avoid confusion among users",
+          "related_theme": "Unreliable Service"
         },
         {
-          "title": "Leverage the positive sentimen...",
-          "details": "Leverage the positive sentiment in marketing campaigns to attract new users",
-          "related_theme": "Overall Satisfaction"
+          "title": "Improve customer support by pr...",
+          "details": "Improve customer support by providing timely and effective resolutions to user issues, and ensuring that support tickets are addressed promptly",
+          "related_theme": "Unreliable Service"
         }
       ],
-      "review_count": 28,
+      "review_count": 29,
       "cluster_label": 6
     },
     {
       "name": "Positive Experience",
-      "description": "The majority of users have had a positive experience, with many using the word 'nice' to describe it. Most reviews are 5-star, indicating a high level of satisfaction.",
+      "description": "The majority of users have expressed a positive sentiment towards the product, with many using the word 'nice' to describe it. The overall tone is overwhelmingly positive, indicating a high level of customer satisfaction.",
       "quotes": [
         {
           "text": "awesome",
@@ -162,13 +170,13 @@
       ],
       "actions": [
         {
-          "title": "Maintain current quality stand...",
-          "details": "Maintain current quality standards",
+          "title": "Improve customer support to ma...",
+          "details": "Improve customer support to maintain high satisfaction",
           "related_theme": "Positive Experience"
         },
         {
-          "title": "Gather more detailed feedback ...",
-          "details": "Gather more detailed feedback to identify areas for improvement",
+          "title": "Enhance product features to co...",
+          "details": "Enhance product features to continue exceeding customer expectations",
           "related_theme": "Positive Experience"
         }
       ],
@@ -176,48 +184,48 @@
       "cluster_label": 2
     },
     {
-      "name": "Generally Positive Experience",
-      "description": "The majority of users have reported a positive experience, with many using words like 'super' and 'superb' to describe the service. However, there are some negative reviews and comments about speed.",
+      "name": "Ease of Use",
+      "description": "The theme revolves around the simplicity and accessibility of the system, making it ideal for beginners and easy to navigate for all users. The majority of reviews praise the system's user-friendly interface and ease of use.",
       "quotes": [
         {
-          "text": "superb service",
+          "text": "easy to use",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T15:21:30Z",
+          "date": "2026-06-16T19:03:40Z",
           "validated": true
         },
         {
-          "text": "slow speed",
+          "text": "Simple and easiest user interface",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T15:21:30Z",
+          "date": "2026-06-16T19:03:40Z",
           "validated": true
         },
         {
-          "text": "suckers",
+          "text": "Getting started was quick and completely stress-free.",
           "review_id": "unknown",
           "rating": 1,
           "store": "unknown",
-          "date": "2026-06-16T15:21:30Z",
+          "date": "2026-06-16T19:03:40Z",
           "validated": true
         }
       ],
       "actions": [
         {
-          "title": "Improve the speed of the servi...",
-          "details": "Improve the speed of the service to address the concerns of users who have reported slow speeds",
-          "related_theme": "Generally Positive Experience"
+          "title": "Simplify the onboarding proces...",
+          "details": "Simplify the onboarding process to reduce stress for new users",
+          "related_theme": "Ease of Use"
         },
         {
-          "title": "Investigate the cause of negat...",
-          "details": "Investigate the cause of negative reviews to identify areas for improvement and prevent similar issues in the future",
-          "related_theme": "Generally Positive Experience"
+          "title": "Continuously gather feedback t...",
+          "details": "Continuously gather feedback to maintain and improve the user-friendly interface",
+          "related_theme": "Ease of Use"
         }
       ],
-      "review_count": 20,
-      "cluster_label": 3
+      "review_count": 22,
+      "cluster_label": 17
     }
   ],
   "stats": {
@@ -228,10 +236,10 @@
     "noise_reviews": 0,
     "themes_generated": 5,
     "quotes_proposed": 15,
-    "quotes_validated": 14,
+    "quotes_validated": 15,
     "llm_usage": {
-      "input_tokens": 5397,
-      "output_tokens": 655,
+      "input_tokens": 6270,
+      "output_tokens": 719,
       "estimated_cost_usd": 0.0
     }
   }

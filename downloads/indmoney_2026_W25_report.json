@@ -3,22 +3,111 @@
   "display_name": "INDMoney",
   "iso_year": 2026,
   "iso_week": 25,
-  "generated_at": "2026-06-17T15:19:20.111895Z",
+  "generated_at": "2026-06-17T17:28:13.258787Z",
   "review_window_start": "2026-04-12T00:00:00Z",
   "review_window_end": "2026-06-21T00:00:00Z",
-  "themes": [],
+  "themes": [
+    {
+      "name": "App Performance Issues",
+      "description": "Users are experiencing various issues with the app's performance, including lag, slow loading, and functionality problems. These issues are affecting their trading experience and overall satisfaction with the app.",
+      "quotes": [
+        {
+          "text": "getting little bit lag and slow can you check please",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        },
+        {
+          "text": "Sometimes the position vanished from the chart, TP/SL didn't work on mobile",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        },
+        {
+          "text": "customized watch list is not visible under watchlist",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Optimize the app for better pe...",
+          "details": "Optimize the app for better performance on various devices and internet speeds",
+          "related_theme": "App Performance Issues"
+        },
+        {
+          "title": "Address specific functionality...",
+          "details": "Address specific functionality issues, such as missing features and bugs, to improve the overall user experience",
+          "related_theme": "App Performance Issues"
+        }
+      ],
+      "review_count": 21,
+      "cluster_label": 1
+    },
+    {
+      "name": "Generally Positive",
+      "description": "The overall sentiment of the reviews is positive, with many users expressing satisfaction with the product or service. However, the reviews are brief and lack specific details about what makes the product or service good.",
+      "quotes": [
+        {
+          "text": "good 👍",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T18:52:00Z",
+          "validated": true
+        },
+        {
+          "text": "Good support",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T18:52:00Z",
+          "validated": true
+        },
+        {
+          "text": "very trustable",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T18:52:00Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Gather more detailed feedback ...",
+          "details": "Gather more detailed feedback to understand the strengths of the product or service",
+          "related_theme": "Generally Positive"
+        },
+        {
+          "title": "Encourage users to provide mor...",
+          "details": "Encourage users to provide more specific reviews to help others make informed decisions",
+          "related_theme": "Generally Positive"
+        }
+      ],
+      "review_count": 17,
+      "cluster_label": 0
+    }
+  ],
   "stats": {
-    "total_reviews": 0,
+    "total_reviews": 38,
     "appstore_reviews": 0,
-    "playstore_reviews": 0,
-    "clusters_found": 0,
+    "playstore_reviews": 38,
+    "clusters_found": 2,
     "noise_reviews": 0,
-    "themes_generated": 0,
-    "quotes_proposed": 0,
-    "quotes_validated": 0,
+    "themes_generated": 2,
+    "quotes_proposed": 6,
+    "quotes_validated": 6,
     "llm_usage": {
-      "input_tokens": 0,
-      "output_tokens": 0,
+      "input_tokens": 1492,
+      "output_tokens": 259,
       "estimated_cost_usd": 0.0
     }
   }

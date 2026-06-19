@@ -1,5 +1,57 @@
 [
   {
+    "id": "829a9308d0a8f229",
+    "store": "playstore",
+    "product": "groww",
+    "author": "[NAME]",
+    "rating": 5,
+    "title": null,
+    "body": "nice application for trading",
+    "date": "2026-06-16T22:19:04Z",
+    "version": "18.10.1",
+    "language": "en",
+    "raw_length": 28
+  },
+  {
+    "id": "416692cdc914b0c8",
+    "store": "playstore",
+    "product": "groww",
+    "author": "[NAME]",
+    "rating": 5,
+    "title": null,
+    "body": "Easy to use",
+    "date": "2026-06-16T22:09:29Z",
+    "version": "18.11.1",
+    "language": "en",
+    "raw_length": 11
+  },
+  {
+    "id": "29ada67e5e8a4445",
+    "store": "playstore",
+    "product": "groww",
+    "author": "[NAME]",
+    "rating": 5,
+    "title": null,
+    "body": "It's good and safe to use",
+    "date": "2026-06-16T22:01:48Z",
+    "version": "18.10.1",
+    "language": "en",
+    "raw_length": 25
+  },
+  {
+    "id": "8bd5a8c787796b6a",
+    "store": "playstore",
+    "product": "groww",
+    "author": "[NAME]",
+    "rating": 2,
+    "title": null,
+    "body": "brokerages and charges are very high as to other brokers",
+    "date": "2026-06-16T21:57:38Z",
+    "version": "18.11.1",
+    "language": "en",
+    "raw_length": 56
+  },
+  {
     "id": "cb3b1482081708c5",
     "store": "playstore",
     "product": "groww",
@@ -6303,57 +6355,5 @@
     "version": "18.10.1",
     "language": "en",
     "raw_length": 188
-  },
-  {
-    "id": "7b245c08cc7456ad",
-    "store": "playstore",
-    "product": "groww",
-    "author": "[NAME]",
-    "rating": 5,
-    "title": null,
-    "body": "good \ud83d\udc4d",
-    "date": "2026-06-12T19:56:44Z",
-    "version": "18.9.0",
-    "language": "en",
-    "raw_length": 6
-  },
-  {
-    "id": "90f836b0d0c400ea",
-    "store": "playstore",
-    "product": "groww",
-    "author": "[NAME]",
-    "rating": 5,
-    "title": null,
-    "body": "Very Simple to use",
-    "date": "2026-06-12T19:34:13Z",
-    "version": "18.11.0",
-    "language": "en",
-    "raw_length": 18
-  },
-  {
-    "id": "d7632480a1a2cf09",
-    "store": "playstore",
-    "product": "groww",
-    "author": "[NAME]",
-    "rating": 1,
-    "title": null,
-    "body": "not interested, Unwsntef",
-    "date": "2026-06-12T19:34:01Z",
-    "version": null,
-    "language": "en",
-    "raw_length": 24
-  },
-  {
-    "id": "2b7645b0e2e953cc",
-    "store": "playstore",
-    "product": "groww",
-    "author": "[NAME]",
-    "rating": 5,
-    "title": null,
-    "body": "Thank You for Updating AI Search in the App.",
-    "date": "2026-06-12T19:27:51Z",
-    "version": "18.11.1",
-    "language": "en",
-    "raw_length": 44
   }
 ]

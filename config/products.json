@@ -4,10 +4,10 @@
       "slug": "indmoney",
       "display_name": "INDMoney",
       "appstore_id": "1470055815",
-      "playstore_id": "com.indmoney.app",
-      "doc_id": "",
+      "playstore_id": "com.indmoney.indstocks",
+      "doc_id": "1QpTMJLgpEvrXnMhNO9noFi6OAzoPqWYG19rG7QTvGXU",
       "doc_title": "Weekly Review Pulse — INDMoney",
-      "stakeholder_emails": []
+      "stakeholder_emails": ["aparana418@gmail.com", "raghuvanshiaparana@gmail.com"]
     },
     {
       "slug": "groww",
@@ -22,28 +22,28 @@
       "slug": "powerup-money",
       "display_name": "PowerUp Money",
       "appstore_id": "",
-      "playstore_id": "",
-      "doc_id": "",
+      "playstore_id": "money.powerup.uni.invest.app",
+      "doc_id": "1GQq5_TldX3YWT5jFsamsqJWW0P_DhLg42Ba8fc4VHl0",
       "doc_title": "Weekly Review Pulse — PowerUp Money",
-      "stakeholder_emails": []
+      "stakeholder_emails": ["aparana418@gmail.com", "raghuvanshiaparana@gmail.com"]
     },
     {
       "slug": "wealth-monitor",
       "display_name": "Wealth Monitor",
       "appstore_id": "",
       "playstore_id": "",
-      "doc_id": "",
+      "doc_id": "1mQpQxASNlV7yG4V7LbX0FoAa0CxoP2KawHCRXFq381s",
       "doc_title": "Weekly Review Pulse — Wealth Monitor",
-      "stakeholder_emails": []
+      "stakeholder_emails": ["aparana418@gmail.com", "raghuvanshiaparana@gmail.com"]
     },
     {
       "slug": "kuvera",
       "display_name": "Kuvera",
       "appstore_id": "1341059498",
       "playstore_id": "com.goalgetter.kuvera",
-      "doc_id": "",
+      "doc_id": "1Dxynpq536BzmYg9IAAgQYvfzSeGT16WCuLMOoPTa4Rc",
       "doc_title": "Weekly Review Pulse — Kuvera",
-      "stakeholder_emails": []
+      "stakeholder_emails": ["aparana418@gmail.com", "raghuvanshiaparana@gmail.com"]
     }
   ]
 }

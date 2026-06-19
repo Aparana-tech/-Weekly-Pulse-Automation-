@@ -20,7 +20,7 @@ fi
 mkdir -p "$PROJECT_DIR/logs"
 
 # The cron command
-CRON_CMD="cd '$PROJECT_DIR' && PULSE_ENV=production '$VENV_PYTHON' -m pulse run --all --force >> '$LOG_FILE' 2>&1"
+CRON_CMD="cd '$PROJECT_DIR' && PULSE_ENV=production '$VENV_PYTHON' src/main.py run --all --force >> '$LOG_FILE' 2>&1"
 
 # Create a temporary file for the current crontab
 TMP_CRON=$(mktemp)

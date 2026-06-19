@@ -76,10 +76,10 @@ async def append_section_to_doc(
     
     await MCPToolInvoker.invoke_tool(
         session=session,
-        tool_name="batch_update",
+        tool_name="append_styled_blocks",
         arguments={
             "documentId": doc_id,
-            "requests": batch_update_payload,
+            "blocks": batch_update_payload,
         },
         timeout=60.0,
     )

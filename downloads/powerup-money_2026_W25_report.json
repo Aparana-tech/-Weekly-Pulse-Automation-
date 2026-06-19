@@ -3,22 +3,243 @@
   "display_name": "PowerUp Money",
   "iso_year": 2026,
   "iso_week": 25,
-  "generated_at": "2026-06-17T15:19:29.619322Z",
+  "generated_at": "2026-06-17T17:27:51.905260Z",
   "review_window_start": "2026-04-12T00:00:00Z",
   "review_window_end": "2026-06-21T00:00:00Z",
-  "themes": [],
+  "themes": [
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are generally satisfied with the app, giving it a 5-star rating and describing it as 'good'. The overwhelming positive sentiment suggests that the app is meeting user expectations.",
+      "quotes": [
+        {
+          "text": "good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T14:55:27Z",
+          "validated": true
+        },
+        {
+          "text": "good one nice app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T14:55:27Z",
+          "validated": true
+        },
+        {
+          "text": "So good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T14:55:27Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the app's current features to sustain user satisfaction",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for enhancement and potential new features",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 49,
+      "cluster_label": 3
+    },
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are extremely satisfied with the app, consistently giving it 5-star reviews and praising its quality. The app seems to be meeting user expectations, with many reviewers using positive adjectives to describe it.",
+      "quotes": [
+        {
+          "text": "great app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T17:49:50Z",
+          "validated": true
+        },
+        {
+          "text": "Excellent app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T17:49:50Z",
+          "validated": true
+        },
+        {
+          "text": "Really great app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T17:49:50Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the app's current features to sustain user satisfaction",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback from users to identify areas for potential expansion or new feature development",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 26,
+      "cluster_label": 2
+    },
+    {
+      "name": "Daily Usage Satisfaction",
+      "description": "Users are extremely satisfied with the product, using it daily and considering it one of their favorites. The overall sentiment is overwhelmingly positive, with many users expressing their love for the product.",
+      "quotes": [
+        {
+          "text": "Love this",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T20:49:54Z",
+          "validated": true
+        },
+        {
+          "text": "Use it daily",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T20:49:54Z",
+          "validated": true
+        },
+        {
+          "text": "Daily favorite",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-14T20:49:54Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the product's quality to retain daily users",
+          "related_theme": "Daily Usage Satisfaction"
+        },
+        {
+          "title": "Explore ways to expand the pro...",
+          "details": "Explore ways to expand the product's features to further increase user engagement and satisfaction",
+          "related_theme": "Daily Usage Satisfaction"
+        }
+      ],
+      "review_count": 25,
+      "cluster_label": 23
+    },
+    {
+      "name": "Excellent User Experience",
+      "description": "Users are extremely satisfied with the app, praising its ease of use and overall quality. The app has received consistent positive feedback, with many users considering it the best app available.",
+      "quotes": [
+        {
+          "text": "interface is easy I use this app interface is easy",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-15T22:59:05Z",
+          "validated": true
+        },
+        {
+          "text": "best app for Android app and very nice app and very useful app best app..",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-15T22:59:05Z",
+          "validated": true
+        },
+        {
+          "text": "Simply the best",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-15T22:59:05Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to prioritize user ex...",
+          "details": "Continue to prioritize user experience and interface design to maintain high user satisfaction",
+          "related_theme": "Excellent User Experience"
+        },
+        {
+          "title": "Leverage the positive feedback...",
+          "details": "Leverage the positive feedback to improve marketing and attract new users",
+          "related_theme": "Excellent User Experience"
+        }
+      ],
+      "review_count": 22,
+      "cluster_label": 24
+    },
+    {
+      "name": "Positive App Experience",
+      "description": "Users are extremely satisfied with the app, praising its overall quality and performance. The reviews highlight a consistent positive sentiment towards the app.",
+      "quotes": [
+        {
+          "text": "nice app 🤑",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T22:44:20Z",
+          "validated": true
+        },
+        {
+          "text": "Nice app best experience",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T22:44:20Z",
+          "validated": true
+        },
+        {
+          "text": "Nice app working smoothly",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-16T22:44:20Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the app's current features to sustain user satisfaction",
+          "related_theme": "Positive App Experience"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for potential expansion or new feature development",
+          "related_theme": "Positive App Experience"
+        }
+      ],
+      "review_count": 20,
+      "cluster_label": 15
+    }
+  ],
   "stats": {
-    "total_reviews": 0,
+    "total_reviews": 500,
     "appstore_reviews": 0,
-    "playstore_reviews": 0,
-    "clusters_found": 0,
+    "playstore_reviews": 500,
+    "clusters_found": 5,
     "noise_reviews": 0,
-    "themes_generated": 0,
-    "quotes_proposed": 0,
-    "quotes_validated": 0,
+    "themes_generated": 5,
+    "quotes_proposed": 15,
+    "quotes_validated": 15,
     "llm_usage": {
-      "input_tokens": 0,
-      "output_tokens": 0,
+      "input_tokens": 3135,
+      "output_tokens": 611,
       "estimated_cost_usd": 0.0
     }
   }

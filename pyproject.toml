@@ -23,6 +23,7 @@ dependencies = [
     "rich>=13.0,<14.0",
     "google-play-scraper>=1.2,<2.0",
     "tenacity>=8.2,<9.0",
+    "schedule>=1.2.0,<2.0.0",
 ]
 
 [project.optional-dependencies]

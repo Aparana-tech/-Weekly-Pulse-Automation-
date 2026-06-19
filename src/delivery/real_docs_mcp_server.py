@@ -53,6 +53,28 @@ async def list_tools() -> list[types.Tool]:
                 },
                 "required": ["documentId", "requests"],
             },
+        ),
+        types.Tool(
+            name="append_styled_blocks",
+            description="Intelligently appends styled text blocks by calculating the current document length.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "documentId": {"type": "string"},
+                    "blocks": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "text": {"type": "string"},
+                                "bold": {"type": "boolean"}
+                            },
+                            "required": ["text"]
+                        }
+                    },
+                },
+                "required": ["documentId", "blocks"],
+            },
         )
     ]
 
@@ -60,7 +82,7 @@ async def list_tools() -> list[types.Tool]:
 async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
     """Handle tool execution requests."""
     
-    if not creds or not creds.valid:
+    if not creds:
         return [types.TextContent(
             type="text",
             text="Error: Missing or invalid Google Credentials. Please run scripts/authenticate_google.py."
@@ -98,6 +120,85 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
             return [types.TextContent(
                 type="text",
                 text=f"Batch update completed successfully: {json.dumps(result)}"
+            )]
+            
+        elif name == "append_styled_blocks":
+            document_id = arguments["documentId"]
+            blocks = arguments["blocks"]
+            
+            # Fetch document to get current length
+            doc = service.documents().get(documentId=document_id).execute()
+            
+            # Find the endIndex of the last element in the body
+            content = doc.get("body", {}).get("content", [])
+            if not content:
+                current_index = 1
+            else:
+                current_index = content[-1].get("endIndex", 2) - 1
+            
+            requests = []
+            
+            # We want to insert the text backward so indices don't shift,
+            # or just insert forward using precise indices!
+            # If we insert forward, indices shift, so we must calculate indices correctly.
+            # Actually, using insertText with 'index' will shift the document length.
+            # It's easiest to build the requests with calculated indices.
+            # Wait! If we send them in a single batchUpdate, the indices are evaluated BEFORE any requests are applied?
+            # NO. Google Docs API evaluates indices AFTER the preceding requests in the batch!
+            # This means if we insert at current_index, the next text must be inserted at current_index + len(text)
+            
+            for block in blocks:
+                text = block["text"]
+                is_bold = block.get("bold", False)
+                text_len = len(text)
+                
+                # 1. Insert Text
+                requests.append({
+                    "insertText": {
+                        "location": {"index": current_index},
+                        "text": text
+                    }
+                })
+                
+                # 2. Update Style if needed
+                if is_bold:
+                    requests.append({
+                        "updateTextStyle": {
+                            "range": {
+                                "startIndex": current_index,
+                                "endIndex": current_index + text_len
+                            },
+                            "textStyle": {
+                                "bold": True
+                            },
+                            "fields": "bold"
+                        }
+                    })
+                else:
+                    # Explicitly remove bold just in case it inherited it
+                    requests.append({
+                        "updateTextStyle": {
+                            "range": {
+                                "startIndex": current_index,
+                                "endIndex": current_index + text_len
+                            },
+                            "textStyle": {
+                                "bold": False
+                            },
+                            "fields": "bold"
+                        }
+                    })
+                
+                # Advance index for the next block
+                current_index += text_len
+                
+            result = service.documents().batchUpdate(
+                documentId=document_id, body={"requests": requests}
+            ).execute()
+            
+            return [types.TextContent(
+                type="text",
+                text=f"Styled blocks appended successfully."
             )]
             
         else:

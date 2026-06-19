@@ -1,7 +1,7 @@
 """
 Google Docs Report Renderer.
 
-Transforms a PulseReport into a Google Docs batchUpdate payload.
+Transforms a PulseReport into an array of styled text blocks.
 """
 
 from __future__ import annotations
@@ -9,25 +9,12 @@ from __future__ import annotations
 from typing import Any
 from datetime import datetime
 
-from src.analysis.models import PulseReport, Theme
+from src.analysis.models import PulseReport
 
 
-def _create_insert_text_request(text: str, style: str = "NORMAL_TEXT") -> list[dict[str, Any]]:
-    """Create requests to insert text with a specific named style."""
-    requests: list[dict[str, Any]] = [
-        {
-            "insertText": {
-                "endOfSegmentLocation": {"segmentId": ""},
-                "text": text,
-            }
-        }
-    ]
-    # We could theoretically add styling requests here if we tracked indices,
-    # but for simplicity, we rely on basic insertText. Google Docs will use the
-    # surrounding style. To apply specific styles, we'd need index tracking,
-    # but the simplest way to get styled text at the end of a doc is just inserting text.
-    # Actually, let's keep it simple and just insert text.
-    return requests
+def _create_block(text: str, bold: bool = False) -> dict[str, Any]:
+    """Create a styled text block."""
+    return {"text": text, "bold": bold}
 
 
 def _format_date(date_obj: datetime | None) -> str:
@@ -39,45 +26,43 @@ def _format_date(date_obj: datetime | None) -> str:
 
 def render_docs_payload(report: PulseReport) -> list[dict[str, Any]]:
     """
-    Render a PulseReport into a Google Docs batchUpdate requests list.
-
-    The requests are designed to append content to the end of a Google Doc.
+    Render a PulseReport into an array of text blocks with basic styling.
     """
-    requests: list[dict[str, Any]] = []
+    blocks: list[dict[str, Any]] = []
 
     # 1. Section Heading
     date_range = f"{_format_date(report.review_window_start)} to {_format_date(report.review_window_end)}"
     heading_text = f"{report.display_name or report.product} — Weekly Review Pulse — W{report.iso_week} ({date_range})\n"
     
     # Insert heading
-    requests.extend(_create_insert_text_request(heading_text))
+    blocks.append(_create_block(heading_text, bold=True))
 
     # 2. Themes and Quotes
     if not report.themes:
-        requests.extend(_create_insert_text_request("No significant themes discovered this week.\n"))
+        blocks.append(_create_block("No significant themes discovered this week.\n", bold=False))
     else:
-        requests.extend(_create_insert_text_request("\nTOP THEMES:\n"))
+        blocks.append(_create_block("\nTOP THEMES:\n", bold=True))
         for i, theme in enumerate(report.themes, 1):
             theme_text = f"{i}. {theme.name} ({theme.review_count} reviews)\n   {theme.description}\n"
-            requests.extend(_create_insert_text_request(theme_text))
+            blocks.append(_create_block(theme_text, bold=False))
 
-        requests.extend(_create_insert_text_request("\nREAL USER QUOTES:\n"))
+        blocks.append(_create_block("\nREAL USER QUOTES:\n", bold=True))
         for theme in report.themes:
             valid_quotes = theme.validated_quotes
             if valid_quotes:
-                requests.extend(_create_insert_text_request(f"\n{theme.name}:\n"))
+                blocks.append(_create_block(f"\n{theme.name}:\n", bold=True))
                 for quote in valid_quotes:
                     attribution = f"[{quote.rating}⭐ | {quote.store} | {_format_date(quote.date)}]"
-                    requests.extend(_create_insert_text_request(f'"{quote.text}" - {attribution}\n'))
+                    blocks.append(_create_block(f'"{quote.text}" - {attribution}\n', bold=False))
 
         # 3. Action Ideas
         has_actions = any(theme.actions for theme in report.themes)
         if has_actions:
-            requests.extend(_create_insert_text_request("\nACTION IDEAS:\n"))
+            blocks.append(_create_block("\nACTION IDEAS:\n", bold=True))
             for theme in report.themes:
                 for action in theme.actions:
                     action_text = f"• {action.title}: {action.details} (Related to: {theme.name})\n"
-                    requests.extend(_create_insert_text_request(action_text))
+                    blocks.append(_create_block(action_text, bold=False))
 
     # 4. Metadata Block
     metadata_text = (
@@ -88,6 +73,6 @@ def render_docs_payload(report: PulseReport) -> list[dict[str, Any]]:
         f"- Anchor ID: {report.section_anchor}\n"
         f"--- \n"
     )
-    requests.extend(_create_insert_text_request(metadata_text))
+    blocks.append(_create_block(metadata_text, bold=False))
 
-    return requests
+    return blocks
