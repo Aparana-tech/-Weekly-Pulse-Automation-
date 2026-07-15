@@ -1,0 +1,36 @@
+name: Pulse Automated Scheduler
+
+on:
+  schedule:
+    # Runs at 06:00 UTC every Monday. 
+    # (Note: If you want 06:00 IST, you can change this to '30 0 * * 1')
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # Update this if you use a different Python version
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[all]"
+
+      - name: Run Pulse Pipeline
+        env:
+          # Ensure you add these secrets in your GitHub repository:
+          # Settings > Secrets and variables > Actions > New repository secret
+          PULSE_GROQ_API_KEY: ${{ secrets.PULSE_GROQ_API_KEY }}
+          PULSE_OPENAI_API_KEY: ${{ secrets.PULSE_OPENAI_API_KEY }}
+        run: |
+          python src/main.py run --all --force
