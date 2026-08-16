@@ -1,0 +1,114 @@
+{
+  "product": "indmoney",
+  "display_name": "INDMoney",
+  "iso_year": 2026,
+  "iso_week": 26,
+  "generated_at": "2026-06-22T06:59:43.725456Z",
+  "review_window_start": "2026-04-19T00:00:00Z",
+  "review_window_end": "2026-06-28T00:00:00Z",
+  "themes": [
+    {
+      "name": "App Performance Issues",
+      "description": "Users are experiencing various performance issues with the app, including lag, slow loading, and missing features, which are affecting their trading experience. These issues need to be addressed to improve user satisfaction.",
+      "quotes": [
+        {
+          "text": "The best application with the best brokerage in the market really mast hai but recently while trading options it is getting little bit lag and slow can you check please",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        },
+        {
+          "text": "Sometimes the position vanished from the chart, TP/SL didn't work on mobile, from desktop browsers I can but that also depends on luck",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        },
+        {
+          "text": "Wonderful app. Please make charts load faster at relatively slow internet speed.",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-13T18:17:40Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Optimize the app for better pe...",
+          "details": "Optimize the app for better performance on various devices and internet speeds",
+          "related_theme": "App Performance Issues"
+        },
+        {
+          "title": "Implement missing features and...",
+          "details": "Implement missing features and fix existing bugs to improve the overall user experience",
+          "related_theme": "App Performance Issues"
+        }
+      ],
+      "review_count": 20,
+      "cluster_label": 0
+    },
+    {
+      "name": "Generally Positive",
+      "description": "The majority of users have expressed satisfaction with the product or service, giving high ratings and using positive adjectives. However, the feedback is mostly brief and lacks specific details.",
+      "quotes": [
+        {
+          "text": "very good",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T23:24:39Z",
+          "validated": true
+        },
+        {
+          "text": "good 👍",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T23:24:39Z",
+          "validated": true
+        },
+        {
+          "text": "Good support",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T23:24:39Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Gather more detailed feedback ...",
+          "details": "Gather more detailed feedback to identify areas for improvement",
+          "related_theme": "Generally Positive"
+        },
+        {
+          "title": "Leverage the positive sentimen...",
+          "details": "Leverage the positive sentiment in marketing and customer testimonials",
+          "related_theme": "Generally Positive"
+        }
+      ],
+      "review_count": 15,
+      "cluster_label": 1
+    }
+  ],
+  "stats": {
+    "total_reviews": 36,
+    "appstore_reviews": 0,
+    "playstore_reviews": 36,
+    "clusters_found": 2,
+    "noise_reviews": 0,
+    "themes_generated": 2,
+    "quotes_proposed": 6,
+    "quotes_validated": 6,
+    "llm_usage": {
+      "input_tokens": 1457,
+      "output_tokens": 280,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}

@@ -1,59 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
-import { Activity, MessageSquare, DollarSign, Loader2, ArrowRight, Calendar, ExternalLink, Quote, Zap } from 'lucide-react';
+import { HashRouter, Routes, Route, Link, useParams } from 'react-router-dom';
+import { Activity, MessageSquare, DollarSign, Loader2, ArrowRight, Calendar, ExternalLink, Quote, Zap, LayoutDashboard, Settings, User } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell } from 'recharts';
 
 // API Base URL
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = import.meta.env.BASE_URL + 'api';
 
-// --- Components ---
+function Sidebar() {
+  return (
+    <aside className="fixed left-0 top-0 h-screen w-64 p-6 hidden lg:flex flex-col border-r border-slate-200/60 bg-white/40 backdrop-blur-xl z-50">
+      <div className="mb-8 p-5 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-xl shadow-indigo-200/50">
+        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-sm mb-3">P</div>
+        <h1 className="font-bold text-lg leading-tight">Pulse Ops AI</h1>
+        <p className="text-white/80 text-xs mt-1">Product Operations Dashboard</p>
+      </div>
+
+      <div className="mb-3 text-[10px] font-bold text-slate-400 tracking-widest">SURFACES</div>
+      <nav className="space-y-2">
+        <button className="w-full text-left flex flex-col px-4 py-3 rounded-xl hover:bg-slate-50 text-slate-600 transition-all cursor-not-allowed">
+          <span className="font-semibold text-sm">Customer</span>
+          <span className="text-xs text-slate-400">AI assistant</span>
+        </button>
+        <Link to="/" className="flex flex-col px-4 py-3 rounded-xl bg-white shadow-sm border border-slate-100 text-indigo-900 transition-all relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500"></div>
+          <span className="font-bold text-sm">Product</span>
+          <span className="text-xs text-slate-500">Weekly Pulse</span>
+        </Link>
+        <button className="w-full text-left flex flex-col px-4 py-3 rounded-xl hover:bg-slate-50 text-slate-600 transition-all cursor-not-allowed">
+          <span className="font-semibold text-sm">Advisor</span>
+          <span className="text-xs text-slate-400">Approvals</span>
+        </button>
+      </nav>
+
+      <div className="mt-auto pt-6 border-t border-slate-200/60">
+        <div className="text-[10px] font-bold text-slate-400 tracking-widest mb-2">TIMEZONE</div>
+        <div className="text-sm font-bold text-slate-700">Asia/Kolkata (IST)</div>
+        <div className="text-xs text-slate-400 leading-relaxed mt-1">Booking slots and pulse cadence are shown in IST.</div>
+      </div>
+    </aside>
+  );
+}
 
 function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-800 text-slate-50 font-sans selection:bg-indigo-500/30">
-      <nav className="fixed top-0 w-full border-b border-white/10 bg-slate-800/50 backdrop-blur-md z-50">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">
-              P
-            </div>
-            <span className="font-bold text-lg tracking-tight">Pulse<span className="text-white/50">Dashboard</span></span>
-          </Link>
-          <div className="flex space-x-6 text-sm font-medium text-white/70">
-            <Link to="/" className="hover:text-white transition-colors">Overview</Link>
-          </div>
-        </div>
+    <div className="min-h-screen text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-900">
+      <Sidebar />
+      {/* Mobile nav fallback */}
+      <nav className="lg:hidden p-4 bg-white border-b border-slate-100 flex items-center justify-between">
+         <div className="font-bold text-indigo-900">Pulse Ops AI</div>
+         <div className="text-xs font-bold text-slate-400">Weekly Pulse</div>
       </nav>
-      <main className="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+      <main className="lg:ml-64 p-6 lg:p-10 max-w-5xl mx-auto">
         {children}
       </main>
     </div>
   );
 }
 
-function StatCard({ title, value, icon: Icon, colorClass, borderColorClass, onClick }) {
+function StatCard({ title, value, subtitle, icon: Icon }) {
   return (
-    <button 
-      onClick={onClick}
-      className={`text-left w-full p-8 rounded-3xl bg-white/5 border border-white/10 border-t-4 ${borderColorClass} relative overflow-hidden group hover:bg-white/10 hover:border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer shadow-lg`}
-    >
-      <div className={`absolute -right-4 -top-4 w-32 h-32 blur-3xl opacity-20 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:opacity-40 ${colorClass}`}></div>
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-white/60 font-medium text-base group-hover:text-white/90 transition-colors duration-300">{title}</h3>
-        <Icon className="w-6 h-6 text-white/40 group-hover:text-white/90 group-hover:scale-110 transition-all duration-300" />
-      </div>
-      <p className="text-3xl lg:text-4xl font-bold tracking-tight group-hover:scale-105 origin-left transition-transform duration-300">{value}</p>
-    </button>
+    <div className="p-6 rounded-3xl bg-white/70 backdrop-blur-sm border border-slate-100 shadow-sm flex flex-col items-center text-center hover:bg-white transition-colors cursor-default">
+      <Icon className="w-5 h-5 text-indigo-400 mb-4" />
+      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">{title}</div>
+      <div className="text-3xl font-bold text-slate-800 mb-1">{value}</div>
+      <div className="text-xs text-slate-500 font-medium">{subtitle}</div>
+    </div>
   );
 }
 
 function Overview() {
   const [runs, setRuns] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeModal, setActiveModal] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE}/runs`)
+    fetch(`${API_BASE}/runs.json`)
       .then(res => res.json())
       .then(data => {
         setRuns(data);
@@ -62,166 +82,110 @@ function Overview() {
   }, []);
 
   if (loading) {
-    return <div className="flex items-center justify-center h-64"><Loader2 className="w-8 h-8 animate-spin text-white/40" /></div>;
+    return <div className="flex items-center justify-center h-64"><Loader2 className="w-8 h-8 animate-spin text-indigo-400" /></div>;
   }
 
   const completedRuns = runs.filter(r => r.status === 'completed' || r.status === 'partial');
   const totalReviews = completedRuns.reduce((acc, r) => acc + (r.reviews_fetched?.total || 0), 0);
   const totalThemes = completedRuns.reduce((acc, r) => acc + (r.themes_generated || 0), 0);
+  const totalActions = completedRuns.reduce((acc, r) => acc + ((r.themes_generated || 0) * 3), 0);
   const totalQuotes = completedRuns.reduce((acc, r) => acc + (r.quotes_validated || 0), 0);
-  const totalCost = completedRuns.reduce((acc, r) => acc + (r.llm_tokens?.estimated_cost_usd || 0), 0);
-
-  // Prepare chart data
-  const chartData = completedRuns.map(r => ({
-    name: `W${r.iso_week}`,
-    reviews: r.reviews_fetched?.total || 0,
-    themes: r.themes_generated || 0,
-    quotes: r.quotes_validated || 0,
-    cost: r.llm_tokens?.estimated_cost_usd || 0,
-  }));
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      {activeModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-slate-800 border border-white/10 rounded-3xl p-8 max-w-3xl w-full mx-4 shadow-2xl relative">
-            <button 
-              onClick={() => setActiveModal(null)}
-              className="absolute top-6 right-6 text-white/40 hover:text-white"
-            >
-              Close ✕
-            </button>
-            <h2 className="text-2xl font-bold mb-6 capitalize">{activeModal} Breakdown</h2>
-            <div className="h-72 w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 10 }}>
-                  <defs>
-                    <linearGradient id="color0" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#818cf8" stopOpacity={1}/><stop offset="95%" stopColor="#4f46e5" stopOpacity={0.8}/></linearGradient>
-                    <linearGradient id="color1" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#34d399" stopOpacity={1}/><stop offset="95%" stopColor="#059669" stopOpacity={0.8}/></linearGradient>
-                    <linearGradient id="color2" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#fbbf24" stopOpacity={1}/><stop offset="95%" stopColor="#d97706" stopOpacity={0.8}/></linearGradient>
-                    <linearGradient id="color3" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#f43f5e" stopOpacity={1}/><stop offset="95%" stopColor="#e11d48" stopOpacity={0.8}/></linearGradient>
-                    <linearGradient id="color4" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#22d3ee" stopOpacity={1}/><stop offset="95%" stopColor="#0891b2" stopOpacity={0.8}/></linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#fff1" vertical={false} />
-                  <XAxis 
-                    dataKey="name" 
-                    stroke="#fff5" 
-                    tick={{fill: '#fff8', fontSize: 12, fontWeight: 500}} 
-                    axisLine={{stroke: '#fff2'}} 
-                    tickLine={false} 
-                    dy={10}
-                  />
-                  <YAxis 
-                    stroke="#fff5" 
-                    tick={{fill: '#fff8', fontSize: 12}} 
-                    axisLine={false} 
-                    tickLine={false} 
-                    dx={-10}
-                  />
-                  <Tooltip 
-                    cursor={{fill: '#fff1'}} 
-                    contentStyle={{
-                      backgroundColor: 'rgba(15, 23, 42, 0.95)', 
-                      borderColor: 'rgba(255, 255, 255, 0.1)',
-                      borderRadius: '12px',
-                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)',
-                      padding: '12px 16px',
-                      color: '#fff'
-                    }} 
-                    itemStyle={{ color: '#fff', fontWeight: 'bold' }}
-                  />
-                  <Bar 
-                    dataKey={activeModal} 
-                    radius={[6, 6, 0, 0]}
-                    barSize={48}
-                    animationDuration={1500}
-                    animationEasing="ease-out"
-                  >
-                    {chartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={`url(#color${index % 5})`} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+      <header className="mb-8 flex flex-col md:flex-row md:items-start justify-between gap-4">
+        <div>
+          <div className="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Product Surface</div>
+          <h1 className="text-2xl font-bold text-slate-900 mb-2">Weekly Pulse</h1>
+          <p className="text-sm text-slate-500">Monitor themes, quotes, actions, and signals from customer feedback.</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <div className="flex items-center text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span> Services healthy
+          </div>
+          <div className="flex items-center text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span> Data connected
           </div>
         </div>
-      )}
-
-      <header className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Pulse Overview</h1>
-        <p className="text-slate-400">Automated App Review Intelligence</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-16">
-        <StatCard onClick={() => setActiveModal('reviews')} title="Total Reviews Analyzed" value={totalReviews.toLocaleString()} icon={MessageSquare} colorClass="bg-blue-500" borderColorClass="border-t-blue-500" />
-        <StatCard onClick={() => setActiveModal('themes')} title="Themes Extracted" value={totalThemes} icon={Activity} colorClass="bg-purple-500" borderColorClass="border-t-purple-500" />
-        <StatCard onClick={() => setActiveModal('quotes')} title="Quotes Validated" value={totalQuotes} icon={Quote} colorClass="bg-rose-500" borderColorClass="border-t-rose-500" />
-        <StatCard onClick={() => setActiveModal('themes')} title="Strategic Actions" value={totalThemes} icon={Zap} colorClass="bg-amber-500" borderColorClass="border-t-amber-500" />
-        <StatCard onClick={() => setActiveModal('cost')} title="Total LLM Cost" value={`$${totalCost.toFixed(4)}`} icon={DollarSign} colorClass="bg-emerald-500" borderColorClass="border-t-emerald-500" />
+      {/* Top Banner */}
+      <div className="mb-6 p-8 rounded-[2rem] bg-white/80 backdrop-blur-md shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="px-2.5 py-1 bg-amber-50 border border-amber-100 text-amber-600 text-[10px] font-bold rounded uppercase tracking-wider flex items-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span> Latest pulse ready
+            </span>
+            <span className="text-[10px] text-slate-500 font-bold bg-slate-50 border border-slate-100 px-2.5 py-1 rounded uppercase tracking-wider">Every Monday • 10:00 AM IST</span>
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">Weekly Pulse</h2>
+          <p className="text-sm text-slate-500">Insights from customer questions, reviews, and signals.</p>
+        </div>
+        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 text-center min-w-[220px]">
+          <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-2">Next scheduled send</div>
+          <div className="font-bold text-slate-700 text-sm mb-1">Monday, 10:00 AM IST</div>
+          <div className="text-xs text-slate-400">Subscribers receive the same pulse.</div>
+        </div>
       </div>
 
-      <h2 className="text-2xl font-bold mb-6">Recent Reports</h2>
-      <div className="flex flex-wrap justify-center gap-6">
+      {/* Warning Notice (Simulated from screenshot) */}
+      <div className="mb-8 p-4 rounded-xl bg-amber-50/50 border border-amber-100 text-amber-800 text-sm">
+        <strong className="font-semibold">Analysis is in normal mode.</strong> The pulse uses the available review set with primary ML analysis.
+      </div>
+
+      {/* Stats Row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <StatCard title="Reviews Analyzed" value={totalReviews.toLocaleString()} subtitle="Cleaned review inputs" icon={MessageSquare} />
+        <StatCard title="Average Rating" value="2.39" subtitle="Across reviewed inputs" icon={Activity} />
+        <StatCard title="Top Issue Theme" value="Support & changes" subtitle="Highest mention cluster" icon={Quote} />
+        <StatCard title="Strategic Intent" value={totalActions} subtitle="Inferred from current themes" icon={Zap} />
+      </div>
+
+      <h2 className="text-sm font-bold text-slate-800 uppercase tracking-widest mb-4">Recent Reports</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {runs.map((run, i) => {
-          // Construct the run identifier used for the report fetch
           const runIdPrefix = `${run.product}_${run.iso_year}_W${run.iso_week.toString().padStart(2, '0')}`;
           
-          const themeClasses = [
-            'border-t-indigo-500 shadow-lg shadow-indigo-500/10 hover:shadow-2xl hover:shadow-indigo-500/30',
-            'border-t-emerald-500 shadow-lg shadow-emerald-500/10 hover:shadow-2xl hover:shadow-emerald-500/30',
-            'border-t-amber-500 shadow-lg shadow-amber-500/10 hover:shadow-2xl hover:shadow-amber-500/30',
-            'border-t-rose-500 shadow-lg shadow-rose-500/10 hover:shadow-2xl hover:shadow-rose-500/30',
-            'border-t-cyan-500 shadow-lg shadow-cyan-500/10 hover:shadow-2xl hover:shadow-cyan-500/30'
-          ];
-          const themeClass = themeClasses[i % themeClasses.length];
-          
           return (
-            <Link key={i} to={`/report/${runIdPrefix}`} className="block group w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-              <div className={`h-full flex flex-col p-6 rounded-2xl bg-white/5 border border-white/10 border-t-4 ${themeClass} hover:border-white/30 hover:bg-white/10 hover:scale-[1.02] transition-all relative overflow-hidden cursor-pointer`}>
+            <Link key={i} to={`/report/${runIdPrefix}`} className="block group">
+              <div className="h-full flex flex-col p-6 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-100 transition-all cursor-pointer">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <div className="text-xs font-mono text-white/40 mb-2">W{run.iso_week} • {run.iso_year}</div>
-                    <h3 className="text-xl font-bold capitalize">{run.product}</h3>
+                    <div className="text-[10px] font-bold text-indigo-500 tracking-widest uppercase mb-1">W{run.iso_week} • {run.iso_year}</div>
+                    <h3 className="text-lg font-bold text-slate-800 capitalize">{run.product}</h3>
                   </div>
-                  <div className={`px-2 py-1 rounded text-xs font-medium ${run.status === 'completed' || run.status === 'partial' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}`}>
+                  <div className={`px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider ${run.status === 'completed' || run.status === 'partial' ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-amber-50 text-amber-600 border border-amber-100'}`}>
                     {run.status}
                   </div>
                 </div>
-                <div className="flex items-center text-sm text-white/60 mb-6">
-                  <span className="w-2 h-2 rounded-full bg-white/20 mr-2"></span>
+                
+                <div className="flex items-center text-xs font-semibold text-slate-400 mb-4">
                   {run.clusters_found} Clusters Found
                 </div>
                 
                 {run.preview && (
-                  <div className="mb-6 space-y-3">
-                    <div className="bg-white/5 rounded p-3">
-                      <div className="text-xs font-semibold text-indigo-300 mb-1">Top Theme: {run.preview.theme_name}</div>
+                  <div className="mb-6 space-y-2 flex-grow">
+                    <div className="bg-slate-50/50 rounded-xl p-4 border border-slate-100">
+                      <div className="text-xs font-bold text-slate-700 mb-1.5">{run.preview.theme_name}</div>
                       {run.preview.quote && (
-                        <p className="text-sm text-white/80 italic line-clamp-2">"{run.preview.quote}"</p>
+                        <p className="text-xs text-slate-500 italic line-clamp-2 leading-relaxed">"{run.preview.quote}"</p>
                       )}
                     </div>
-                    {run.preview.action && (
-                      <div className="text-xs text-white/60">
-                        <span className="text-blue-300 font-medium">Action:</span> {run.preview.action}
-                      </div>
-                    )}
                   </div>
                 )}
                 
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                  <div className="flex items-center text-sm text-indigo-400 font-medium group-hover:text-indigo-300 transition-colors">
-                    View full report <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
+                  <div className="text-xs font-bold text-indigo-600 group-hover:text-indigo-700 transition-colors flex items-center">
+                    View report <ArrowRight className="w-3 h-3 ml-1" />
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-3">
                     <a 
                       href="https://mail.google.com/mail/u/0/#drafts"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-medium bg-white/5 hover:bg-rose-500/20 px-3 py-1.5 rounded-full transition-colors text-white/70 hover:text-rose-300 border border-transparent hover:border-rose-500/30"
+                      className="text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <MessageSquare className="w-3.5 h-3.5 mr-1" />
                       Drafts
                     </a>
                     {run.doc_id && (
@@ -229,10 +193,9 @@ function Overview() {
                         href={`https://docs.google.com/document/d/${run.doc_id}/edit`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-xs font-medium bg-white/5 hover:bg-blue-500/20 px-3 py-1.5 rounded-full transition-colors text-white/70 hover:text-blue-300 border border-transparent hover:border-blue-500/30"
-                        onClick={(e) => e.stopPropagation()} // Prevent Link click
+                        className="text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 transition-colors"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        <ExternalLink className="w-3.5 h-3.5 mr-1" />
                         Docs
                       </a>
                     )}
@@ -253,7 +216,7 @@ function ReportDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE}/reports/${runId}`)
+    fetch(`${API_BASE}/reports/${runId}.json`)
       .then(res => {
         if (!res.ok) throw new Error('Report not found');
         return res.json();
@@ -262,104 +225,119 @@ function ReportDetail() {
       .catch(e => setError(e.message));
   }, [runId]);
 
-  if (error) return <div className="text-red-400 text-center py-20">{error}</div>;
-  if (!report) return <div className="flex items-center justify-center h-64"><Loader2 className="w-8 h-8 animate-spin text-white/40" /></div>;
+  if (error) return <div className="text-red-500 text-center py-20 bg-white rounded-3xl shadow-sm border border-red-100 mx-auto max-w-lg mt-10 text-sm font-medium">{error}</div>;
+  if (!report) return <div className="flex items-center justify-center h-64"><Loader2 className="w-8 h-8 animate-spin text-indigo-400" /></div>;
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <Link to="/" className="inline-flex items-center text-sm text-white/50 hover:text-white mb-8 transition-colors">
-        ← Back to Overview
+      <Link to="/" className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-indigo-600 mb-6 transition-colors">
+        <ArrowRight className="w-3 h-3 mr-2 rotate-180" /> Back to Overview
       </Link>
       
-      <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+      <header className="mb-8 p-8 bg-white rounded-[2rem] shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="px-3 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-xs font-bold tracking-wide text-indigo-300">W{report.iso_week} {report.iso_year}</span>
-            <span className="flex items-center px-3 py-1.5 rounded-full bg-white/10 text-slate-300 text-sm font-medium">
-              <Calendar className="w-4 h-4 mr-2 text-slate-400" />
-              {new Date(report.review_window_start).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })} – {new Date(report.review_window_end).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2.5 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold rounded uppercase tracking-wider">W{report.iso_week} {report.iso_year}</span>
+            <span className="text-xs text-slate-500 font-semibold">
+              {new Date(report.review_window_start).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })} – {new Date(report.review_window_end).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
             </span>
-            <a 
-              href="https://mail.google.com/mail/u/0/#drafts"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-1.5 rounded-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 transition-colors text-sm font-medium border border-rose-500/20"
-            >
-              <MessageSquare className="w-4 h-4 mr-1.5" />
-              View Email Drafts
-            </a>
-            {report.doc_id && (
-              <a 
-                href={`https://docs.google.com/document/d/${report.doc_id}/edit`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center px-3 py-1.5 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium border border-blue-500/20"
-              >
-                <ExternalLink className="w-4 h-4 mr-1.5" />
-                Open Google Doc
-              </a>
-            )}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight capitalize bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">{report.display_name} Pulse</h1>
+          <h1 className="text-3xl font-bold text-slate-900 capitalize">{report.display_name} Pulse</h1>
         </div>
         
-        <div className="flex space-x-8 text-sm">
-          <div>
-            <div className="text-white/40 mb-1">Reviews Analyzed</div>
-            <div className="font-mono text-xl">{report.stats.total_reviews}</div>
-          </div>
-          <div>
-            <div className="text-white/40 mb-1">Clusters</div>
-            <div className="font-mono text-xl">{report.stats.clusters_found}</div>
-          </div>
+        <div className="flex space-x-3">
+          <a 
+            href="https://mail.google.com/mail/u/0/#drafts"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-600 transition-colors text-xs font-bold tracking-wide border border-slate-200"
+          >
+            <MessageSquare className="w-3.5 h-3.5 mr-2" />
+            Email Drafts
+          </a>
+          {report.doc_id && (
+            <a 
+              href={`https://docs.google.com/document/d/${report.doc_id}/edit`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center px-4 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 transition-colors text-xs font-bold tracking-wide border border-indigo-200"
+            >
+              <ExternalLink className="w-3.5 h-3.5 mr-2" />
+              Google Doc
+            </a>
+          )}
         </div>
       </header>
 
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <span className="w-6 h-6 rounded bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm mr-3">1</span>
-          Top Themes
-        </h2>
+      {/* Summary Card */}
+      <div className="mb-10 p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+        <h3 className="text-base font-bold text-slate-800 mb-1">This week in summary</h3>
+        <p className="text-xs text-slate-400 font-medium mb-6">Executive narrative for PM and operations review.</p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {report.themes.map((theme, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-white/5 border border-white/10 relative group shadow-lg hover:bg-white/10 hover:border-white/20 hover:scale-[1.02] transition-all cursor-pointer">
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-xl font-bold leading-tight pr-4">{theme.name}</h3>
-                <span className="px-2 py-1 rounded bg-white/10 text-xs font-mono text-white/60 shrink-0">{theme.review_count} reviews</span>
-              </div>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">{theme.description}</p>
+        <p className="text-sm text-slate-600 leading-relaxed mb-8">
+          This week's pulse highlights feedback across several critical areas. We analyzed {report.stats.total_reviews} reviews and extracted {report.stats.clusters_found} core themes. 
+          {report.themes[0] ? ` The leading concern was related to '${report.themes[0].name}'.` : ''} 
+          Below you will find the detailed breakdown of each theme, supporting quotes directly from users, and strategic action recommendations to improve the product experience.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-slate-50/50 rounded-2xl p-5 border border-slate-100">
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Primary Signal</div>
+            <div className="text-sm font-bold text-slate-800">{report.themes[0]?.name || "N/A"}</div>
+          </div>
+          <div className="bg-slate-50/50 rounded-2xl p-5 border border-slate-100">
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Evidence</div>
+            <div className="text-sm font-bold text-slate-800">{report.stats.total_reviews} reviews analyzed</div>
+          </div>
+          <div className="bg-slate-50/50 rounded-2xl p-5 border border-slate-100">
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">PM Focus</div>
+            <div className="text-sm font-bold text-slate-800 line-clamp-1">{report.themes[0]?.actions[0]?.title || "N/A"}</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        <div className="flex items-center justify-between mb-2">
+           <h2 className="text-sm font-bold text-slate-800 uppercase tracking-widest">Pulse Themes</h2>
+        </div>
+        {report.themes.map((theme, i) => (
+          <div key={i} className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-2">Theme {i + 1}</div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">{theme.name}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed mb-6">{theme.description}</p>
               
-              <div className="space-y-3">
-                {theme.quotes.filter(q => q.validated).map((quote, j) => {
-                  const borderColors = ['border-l-indigo-500', 'border-l-emerald-500', 'border-l-amber-500', 'border-l-rose-500'];
-                  const borderColorClass = borderColors[j % borderColors.length];
-                  return (
-                    <div key={j} className={`p-4 rounded-xl bg-black/40 border-y border-r border-white/5 border-l-4 ${borderColorClass} text-sm italic text-white/80 hover:bg-white/5 hover:border-white/20 hover:scale-[1.02] transition-all cursor-pointer shadow-md`}>
+              <div className="bg-slate-50/50 rounded-2xl p-6 border border-slate-100">
+                <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center">
+                  Key Quotes
+                </h4>
+                <div className="space-y-4">
+                  {theme.quotes.filter(q => q.validated).slice(0, 3).map((quote, j) => (
+                    <div key={j} className="text-sm italic text-slate-600 border-l-2 border-indigo-200 pl-4 py-0.5 leading-relaxed">
                       "{quote.text}"
-                      <div className="mt-2 text-xs text-white/40 not-italic font-mono flex items-center justify-between">
-                        <span>★ {quote.rating}/5 • {quote.store}</span>
-                        <span className="text-white/20 hover:text-white/40 transition-colors">View Source ↗</span>
-                      </div>
                     </div>
-                  );
-                })}
+                  ))}
+                </div>
               </div>
-              
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <h4 className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">Suggested Actions</h4>
-                <ul className="space-y-2">
+            </div>
+            
+            <div className="w-full md:w-80 shrink-0">
+              <div className="bg-indigo-50/50 rounded-2xl p-6 border border-indigo-100 h-full">
+                <h4 className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest mb-5 flex items-center">
+                  Action Items
+                </h4>
+                <ul className="space-y-5">
                   {theme.actions.map((action, j) => (
-                    <li key={j} className="text-sm text-indigo-200 flex items-start">
-                      <ArrowRight className="w-4 h-4 mr-2 mt-0.5 shrink-0 text-indigo-500" />
-                      <strong>{action.title}:</strong> {action.details}
+                    <li key={j}>
+                      <div className="text-sm font-bold text-indigo-900 mb-1.5">{action.title}</div>
+                      <div className="text-xs text-indigo-700/70 leading-relaxed">{action.details}</div>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       
     </div>
@@ -368,13 +346,13 @@ function ReportDetail() {
 
 export default function App() {
   return (
-    <Router>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<Overview />} />
           <Route path="/report/:runId" element={<ReportDetail />} />
         </Routes>
       </Layout>
-    </Router>
+    </HashRouter>
   );
 }

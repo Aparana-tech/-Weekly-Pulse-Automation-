@@ -34,7 +34,7 @@ class TestSettingsDefaults:
 
     def test_default_llm_model(self) -> None:
         s = Settings()
-        assert s.llm_model == "llama-3.3-70b-versatile"
+        assert s.llm_model == "qwen3.6-27b"
 
     def test_default_embedding_model(self) -> None:
         s = Settings()

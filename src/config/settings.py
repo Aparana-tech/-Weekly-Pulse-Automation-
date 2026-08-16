@@ -118,8 +118,8 @@ class Settings(BaseSettings):
 
     # --- Analysis & Intelligence ---
     llm_model: str = Field(
-        default="llama-3.3-70b-versatile",
-        description="LLM model to use for summarization and theme extraction (e.g., llama-3.3-70b-versatile, gpt-4o-mini)",
+        default="qwen3.6-27b",
+        description="LLM model to use for summarization and theme extraction (e.g., qwen3.6-27b, gpt-4o-mini)",
     )
     embedding_model: str = Field(
         default="all-MiniLM-L6-v2", description="Embedding model to use for clustering"

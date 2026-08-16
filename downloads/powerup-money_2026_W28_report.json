@@ -1,0 +1,238 @@
+{
+  "product": "powerup-money",
+  "display_name": "PowerUp Money",
+  "iso_year": 2026,
+  "iso_week": 28,
+  "generated_at": "2026-07-06T06:57:37.516999Z",
+  "review_window_start": "2026-05-03T00:00:00Z",
+  "review_window_end": "2026-07-12T00:00:00Z",
+  "themes": [
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are generally satisfied with the app, giving it high ratings and positive comments. The reviews express a sense of approval and appreciation for the app's quality.",
+      "quotes": [
+        {
+          "text": "So good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-02T16:56:37Z",
+          "validated": true
+        },
+        {
+          "text": "good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-02T16:56:37Z",
+          "validated": true
+        },
+        {
+          "text": "good app execellent",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-02T16:56:37Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the app's quality to sustain user satisfaction",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for further enhancement and innovation",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 33,
+      "cluster_label": 4
+    },
+    {
+      "name": "Mutual Fund App Issues",
+      "description": "Users have reported various issues with the mutual fund app, including incorrect information, poor customer support, and security concerns. However, many users have also found the app to be useful and helpful for managing their investments.",
+      "quotes": [
+        {
+          "text": "don't pay, it's not worth, i paid for pro subscription and got a very standard list of performing and non performing MF",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-04T23:14:40Z",
+          "validated": true
+        },
+        {
+          "text": "they fetch ur all investment data which is VERY RISKY , AVOID THEIR TRAP",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-04T23:14:40Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Improve the accuracy of invest...",
+          "details": "Improve the accuracy of investment information and recommendations provided by the app",
+          "related_theme": "Mutual Fund App Issues"
+        },
+        {
+          "title": "Enhance customer support and a...",
+          "details": "Enhance customer support and address user concerns in a timely and effective manner",
+          "related_theme": "Mutual Fund App Issues"
+        }
+      ],
+      "review_count": 32,
+      "cluster_label": 36
+    },
+    {
+      "name": "App Praise",
+      "description": "Users overwhelmingly praise the app, consistently describing it as nice. The positive feedback suggests a high level of user satisfaction with the app's performance and functionality.",
+      "quotes": [
+        {
+          "text": "Super nice app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-04T06:13:12Z",
+          "validated": true
+        },
+        {
+          "text": "Really nice app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-04T06:13:12Z",
+          "validated": true
+        },
+        {
+          "text": "very nice application for your life",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-04T06:13:12Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and updat...",
+          "details": "Continue to maintain and update the app to sustain user satisfaction",
+          "related_theme": "App Praise"
+        },
+        {
+          "title": "Leverage the positive feedback...",
+          "details": "Leverage the positive feedback to improve marketing and attract new users",
+          "related_theme": "App Praise"
+        }
+      ],
+      "review_count": 31,
+      "cluster_label": 7
+    },
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are extremely satisfied with the app, praising its quality and usefulness. The overwhelming positive feedback suggests a well-designed and effective product.",
+      "quotes": [
+        {
+          "text": "Love the app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:17:06Z",
+          "validated": true
+        },
+        {
+          "text": "Excellent app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:17:06Z",
+          "validated": true
+        },
+        {
+          "text": "very use full app ,super",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:17:06Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and updat...",
+          "details": "Continue to maintain and update the app to sustain user satisfaction",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for further improvement",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 24,
+      "cluster_label": 24
+    },
+    {
+      "name": "Excellent App Experience",
+      "description": "Users overwhelmingly praise the app, considering it the best in its category, with many expressing satisfaction with its ease of use and overall quality. The reviews highlight a strong positive sentiment towards the app.",
+      "quotes": [
+        {
+          "text": "Best app ever",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:23:51Z",
+          "validated": true
+        },
+        {
+          "text": "Simply the best",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:23:51Z",
+          "validated": true
+        },
+        {
+          "text": "app is best for anyone",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-07-03T06:23:51Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and impro...",
+          "details": "Continue to maintain and improve the app's user experience to sustain high customer satisfaction",
+          "related_theme": "Excellent App Experience"
+        },
+        {
+          "title": "Leverage the positive feedback...",
+          "details": "Leverage the positive feedback to enhance marketing efforts and attract more users",
+          "related_theme": "Excellent App Experience"
+        }
+      ],
+      "review_count": 23,
+      "cluster_label": 18
+    }
+  ],
+  "stats": {
+    "total_reviews": 500,
+    "appstore_reviews": 0,
+    "playstore_reviews": 500,
+    "clusters_found": 5,
+    "noise_reviews": 0,
+    "themes_generated": 5,
+    "quotes_proposed": 15,
+    "quotes_validated": 14,
+    "llm_usage": {
+      "input_tokens": 3789,
+      "output_tokens": 630,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}

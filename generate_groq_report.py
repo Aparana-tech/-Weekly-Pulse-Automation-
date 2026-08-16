@@ -7,7 +7,7 @@ from src.rendering.email_renderer import render_email_payload
 from src.rendering.docs_renderer import render_docs_payload
 
 async def main():
-    settings = Settings(embedding_model="all-MiniLM-L6-v2", llm_model="llama-3.3-70b-versatile")
+    settings = Settings(embedding_model="all-MiniLM-L6-v2", llm_model="qwen3.6-27b")
     
     with open("downloads/groww_2026_W25_reviews.json") as f:
         data = json.load(f)

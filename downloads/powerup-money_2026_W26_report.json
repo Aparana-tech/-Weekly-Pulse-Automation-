@@ -1,0 +1,238 @@
+{
+  "product": "powerup-money",
+  "display_name": "PowerUp Money",
+  "iso_year": 2026,
+  "iso_week": 26,
+  "generated_at": "2026-06-22T07:00:02.054949Z",
+  "review_window_start": "2026-04-19T00:00:00Z",
+  "review_window_end": "2026-06-28T00:00:00Z",
+  "themes": [
+    {
+      "name": "Mutual Fund App",
+      "description": "The theme revolves around the overall satisfaction and effectiveness of a mutual fund app in helping users manage and track their investments. Users praise the app for being easy to use, trustworthy, and helpful in earning money.",
+      "quotes": [
+        {
+          "text": "Overall, a great app for anyone who wants to start or manage mutual fund investments easily.",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T15:32:08Z",
+          "validated": true
+        },
+        {
+          "text": "this app simplifies complex investing clear I really like this app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T15:32:08Z",
+          "validated": true
+        },
+        {
+          "text": "thank you for this app before 7 year i invested in mutual funds and i forgot about it but when I use this app I was shock",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T15:32:08Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Improve the app's user interfa...",
+          "details": "Improve the app's user interface to make it even more intuitive and user-friendly",
+          "related_theme": "Mutual Fund App"
+        },
+        {
+          "title": "Expand the app's features to i...",
+          "details": "Expand the app's features to include more investment options and tracking tools",
+          "related_theme": "Mutual Fund App"
+        }
+      ],
+      "review_count": 55,
+      "cluster_label": 15
+    },
+    {
+      "name": "Excellent App",
+      "description": "Users overwhelmingly praise the app, considering it the best, with many expressing satisfaction and trust. The reviews highlight the app's usefulness and performance.",
+      "quotes": [
+        {
+          "text": "best app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T22:09:40Z",
+          "validated": true
+        },
+        {
+          "text": "The best app I have ever seen",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T22:09:40Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain high-qual...",
+          "details": "Continue to maintain high-quality performance and user experience to retain customer satisfaction",
+          "related_theme": "Excellent App"
+        },
+        {
+          "title": "Leverage the positive feedback...",
+          "details": "Leverage the positive feedback to improve marketing strategies and attract more users",
+          "related_theme": "Excellent App"
+        }
+      ],
+      "review_count": 42,
+      "cluster_label": 0
+    },
+    {
+      "name": "User Satisfaction",
+      "description": "The majority of users are extremely satisfied with the PowerUp Money app, praising its simplicity, ease of use, and usefulness. However, one user reported an issue with incorrect information about regular SIP extra payment.",
+      "quotes": [
+        {
+          "text": "power up money app is absolutely lovable because of its simplicity and quick actions..!",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:59:05Z",
+          "validated": true
+        },
+        {
+          "text": "giving wrong information about regular sip extra payment paid",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:59:05Z",
+          "validated": true
+        },
+        {
+          "text": "PowerUp Money is a very good app. easy ui. not much crowded and unnecessary content.",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:59:05Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Improve the app's information ...",
+          "details": "Improve the app's information accuracy to prevent incorrect data about regular SIP extra payments",
+          "related_theme": "User Satisfaction"
+        },
+        {
+          "title": "Maintain and enhance the app's...",
+          "details": "Maintain and enhance the app's user interface to continue providing a seamless user experience",
+          "related_theme": "User Satisfaction"
+        }
+      ],
+      "review_count": 42,
+      "cluster_label": 13
+    },
+    {
+      "name": "Overall Satisfaction",
+      "description": "Users are extremely satisfied with the app, consistently giving it 5-star reviews. The app seems to be meeting user expectations, with many users expressing their approval.",
+      "quotes": [
+        {
+          "text": "good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T07:49:02Z",
+          "validated": true
+        },
+        {
+          "text": "Good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T07:49:02Z",
+          "validated": true
+        },
+        {
+          "text": "Too good app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T07:49:02Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain the app's...",
+          "details": "Continue to maintain the app's current level of quality and performance to sustain user satisfaction",
+          "related_theme": "Overall Satisfaction"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for potential improvement and further enhance the user experience",
+          "related_theme": "Overall Satisfaction"
+        }
+      ],
+      "review_count": 40,
+      "cluster_label": 9
+    },
+    {
+      "name": "Positive App Experience",
+      "description": "Users are extremely satisfied with the application, consistently praising it as 'nice'. The overwhelming positive sentiment suggests a well-designed and functional app. Users appreciate the app, with many expressing gratitude and enthusiasm.",
+      "quotes": [
+        {
+          "text": "nice application",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:33:53Z",
+          "validated": true
+        },
+        {
+          "text": "WOW NICE APP",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:33:53Z",
+          "validated": true
+        },
+        {
+          "text": "beautiful app",
+          "review_id": "unknown",
+          "rating": 1,
+          "store": "unknown",
+          "date": "2026-06-20T06:33:53Z",
+          "validated": true
+        }
+      ],
+      "actions": [
+        {
+          "title": "Continue to maintain and updat...",
+          "details": "Continue to maintain and update the app to sustain user satisfaction",
+          "related_theme": "Positive App Experience"
+        },
+        {
+          "title": "Gather more specific feedback ...",
+          "details": "Gather more specific feedback to identify areas for further improvement and expansion",
+          "related_theme": "Positive App Experience"
+        }
+      ],
+      "review_count": 26,
+      "cluster_label": 4
+    }
+  ],
+  "stats": {
+    "total_reviews": 499,
+    "appstore_reviews": 0,
+    "playstore_reviews": 499,
+    "clusters_found": 5,
+    "noise_reviews": 0,
+    "themes_generated": 5,
+    "quotes_proposed": 15,
+    "quotes_validated": 14,
+    "llm_usage": {
+      "input_tokens": 4792,
+      "output_tokens": 680,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}
