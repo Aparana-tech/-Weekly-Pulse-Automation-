@@ -24,6 +24,8 @@ dependencies = [
     "google-play-scraper>=1.2,<2.0",
     "tenacity>=8.2,<9.0",
     "schedule>=1.2.0,<2.0.0",
+    "fastapi>=0.100.0,<1.0",
+    "uvicorn>=0.20.0,<1.0",
 ]
 
 [project.optional-dependencies]
