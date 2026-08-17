@@ -17,6 +17,12 @@ PROJECT_ROOT = Path(__file__).parent.parent
 CONFIG_DIR = PROJECT_ROOT / "config"
 DOWNLOADS_DIR = PROJECT_ROOT / "downloads"
 
+@app.get("/")
+def read_root():
+    """Health check endpoint."""
+    return {"status": "ok", "message": "Pulse API is running!"}
+
+
 @app.get("/api/products")
 def get_products():
     """Get all configured products."""
