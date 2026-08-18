@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the FastAPI server by default
-CMD uvicorn src.api:app --host 0.0.0.0 --port $PORT
+CMD ["python", "-m", "src.api"]
