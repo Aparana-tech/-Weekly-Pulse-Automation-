@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://Aparana-tech.github.io/-Weekly-Pulse-Automation-/",
   "scripts": {
-    "start": "serve -s dist",
+    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
