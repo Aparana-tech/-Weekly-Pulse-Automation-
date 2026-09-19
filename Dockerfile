@@ -1,6 +1,15 @@
-FROM python:3.11-slim
+# Stage 1: Build the React Dashboard
+FROM node:18 AS frontend-build
+WORKDIR /app/dashboard
+# Only copy package files first for caching
+COPY dashboard/package*.json ./
+RUN npm install
+# Copy the rest of the dashboard source code
+COPY dashboard/ ./
+RUN npm run build
 
-# Set working directory
+# Stage 2: Python API Server
+FROM python:3.11-slim
 WORKDIR /app
 
 # Install build tools (needed for compiling some Python packages like numpy/hdbscan)
@@ -16,6 +25,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application
 COPY . .
+
+# Copy the built React app from Stage 1
+COPY --from=frontend-build /app/dashboard/dist /app/dashboard/dist
 
 # Expose the API port
 EXPOSE 8000

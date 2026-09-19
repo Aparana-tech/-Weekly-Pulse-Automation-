@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import json
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(title="Pulse API")
 
@@ -17,10 +18,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 CONFIG_DIR = PROJECT_ROOT / "config"
 DOWNLOADS_DIR = PROJECT_ROOT / "downloads"
 
-@app.get("/")
-def read_root():
-    """Health check endpoint."""
-    return {"status": "ok", "message": "Pulse API is running!"}
+
 
 
 @app.get("/api/products")
@@ -110,6 +108,12 @@ def get_report(run_id: str):
         return report_data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Serve the React Dashboard static files (HTML, JS, CSS, and API JSON)
+# We mount this last so that the actual /api routes are matched first if they exist
+dashboard_path = PROJECT_ROOT / "dashboard" / "dist"
+if dashboard_path.exists():
+    app.mount("/", StaticFiles(directory=str(dashboard_path), html=True), name="dashboard")
 
 if __name__ == "__main__":
     import uvicorn
